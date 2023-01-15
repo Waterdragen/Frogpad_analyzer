@@ -364,7 +364,7 @@ Even though I didn't include finger usage when building this optimizer, it's sti
 | Optimizer keyboard | |
 | ----- | ----- |
 | Base layer usage | 78.6475% |
-|Effort | 58.0894 |
+| Effort | 58.0894 |
 | thumb | 21.3525% |
 | index | 30.1808% |
 | middle | 30.9031% |
@@ -381,15 +381,7 @@ Even though I didn't include finger usage when building this optimizer, it's sti
 | Lsb | 7.2341 |
 | Top 50 lsb list | ['ou', 'co', 'ho', 'ly', 'so', 'os', 'ry', 'ty', 'ay', 'bu', 'by', 'oc', 'yo', 'du', 'qu', 'ey', 'um', 'go', 'ds', 'mu', 'ny', 'ys', 'fu', 'og', 'ms', 'ye', 'ud', 'ub', 'sm', 'ok', 'my', 'ju', 'eq', 'dy', 'bs', 'oy', 'dg', 'yi', 'yp', 'ym', 'oh', 'uf', 'sf', 'yt', 'ya', 'yl', 'yc', 'yn', 'hm', 'py'] |
 
-
-Process finished with exit code 0
-
-
-
-
-
-
-
+The optimized keyboard has better Sfb, Lsb, I/O Diff, and Rolls than Frogpad, at the expense of -10.5% Base layer usage, and increased thumb and pinky usage (+37.9% and +117.6%). I feel like mine is slightly better just because Frogpad didn't do well in the I/O diff. What do you think? Is it worth the tradeoff? 
 
 
 
