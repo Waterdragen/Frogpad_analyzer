@@ -2,6 +2,7 @@
 Keyboard layout optimizer for Frogpad (one-handed) keyboard layout. <br>
 
 <img src="https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/frogpad_right_hand_keyboard.png" width="600">
+
 *Standard Frogpad keybaord (right handed)* <br>
 
 <h3>Terms and definitions:</h3>
