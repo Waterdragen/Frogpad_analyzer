@@ -5,7 +5,7 @@ Keyboard layout optimizer for Frogpad (one-handed) keyboard layout. <br>
 
 *Standard Frogpad keybaord (right handed)* <br>
 
-<h3>Terms and definitions:</h3>
+### Terms and definitions:
 
 Monogram: 1-letter combination  <br>
 **Bigram**: 2-letter combination  <br>
@@ -43,9 +43,9 @@ Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 </table>
 
 *Base layer effort (left) and Chord layer effort (right)*  <br>
+The average effort is 1.00 so a random keyboard layout is expected to have around 100 effort. (Which is the median of Generation 1)
 
-
-<h3>Pseudocode for keyboard layout performance criteria:</h3>
+### Pseudocode for keyboard layout performance criteria:
 
 Sfb: `col0 == col1 or (col0, col1) in ((0, 1), (1, 0))`  <br>
 Lsb: `abs(row0 - row1) == 2 or ((col0 == 0 and row0 != 1) or (col1 == 0 and row1 != 1) and abs(row0 - row1) >= 1))`  <br>
@@ -53,14 +53,15 @@ Inroll: `col0 > col1 > col2`  <br>
 Outroll: `col0 < col1 < col2`  <br>
 I/O diff.: `inroll - outroll`  <br>
 Rolls: `inroll + outroll`  <br>
+Effort: `Monogram.frequency * keyboard_effort`
 
-<h3>Generation 1</h3>
+## Generation 1
 
-First, I ran 1 million random keyboard combinations and then I generated the hash tables of the generation. The hash tables are divided into row, col, and key so we can analyze the key position by row, col, or key.
+I ran 1 million random keyboard combinations and gets the Best 10% then I generated the hash tables of the generation. The hash tables are divided into row, col, layer, and key. The row_diff, col_diff, and layer_diff hash tables is based on the most frequent location minus the 2nd most frequent location. The higher the difference, the more confidence we have for a key to be in a certain position.The most frequent and highest diff keys are constrained for the next generation.
 
 Results:
 
-|  | Best Q | Best 1% | Frogpad Reference |
+|  | Best Quartile | Best 1% | Frogpad Reference |
 | ----- | ----- | ----- | ----- |
 | Sfb | 23.7686 | 16.8344 | 14.0079 |
 | Lsb | 29.6013 | 15.6122 | 18.9169 |
@@ -70,5 +71,55 @@ Results:
 
 Frogpad top 10 Inrolls: 'the', 'tha', 'pro', 'thi', 'pre', 'tra', 'whi', 'tho', 'cha', 'whe'
 Frogpad top 10 Outrolls: 'and', 'ing', 'ent', 'ons', 'ers', 'int', 'enc', 'ant', 'ity', 'art'
-This shows Frogpad is excellent at low Sfb and low effort, while maintaining high rolls. However it performs poorly in I/O diff. Even though Frogpad got the most frequent trigram to be an Inroll, and the h -> vowel Inroll motion, the vowel -> n Outroll motion hit its I/O diff. hard.
-Frogpad is not doing good in I/O diff.
+This shows Frogpad is excellent at low Sfb and low effort while maintaining high rolls. However, it performs poorly in I/O diff. Even though Frogpad got the most frequent trigram to be an Inroll, and the h -> vowel Inroll motion, the vowel -> n Outroll motion hit its I/O diff hard.  <br>
+
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | e<sub>1</sub> t<sub>1</sub> r<sub>1</sub> n<sub>1</sub> |
+| col | t<sub>4</sub> e<sub>2</sub> q<sub>0</sub> s<sub>1</sub> |
+| layer | t<sub>0</sub> e<sub>0</sub> o<sub>0</sub> s<sub>0</sub> |
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| e | 7 |
+| t | 9 |
+| s | 1, 6, 11 |
+| q | 0, 5, 10, 15, 20, 25 |
+| nr | 5, 6, 8, 20, 21, 22, 23, 24 |
+| o | `layer1` |
+
+## Generation 2
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 21.4028 | 16.1287 | 14.0079 |
+| Lsb | 17.11 | 9.46559 | 18.9169 |
+| I/O diff. | 3.22773 | 8.5716 | -1.2270 |
+| Rolls | 15.5269 | 21.0065 | 18.9485 |
+| Effort | 72.2655 | 64.2417 | 58.5 |
+
+Row / Col / Layer constriants:  <br>
+row: [e<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] a<sub>1</sub> i<sub>1</sub>  <br>
+col: [e<sub>2</sub> q<sub>0</sub> s<sub>1</sub> t<sub>4</sub>] h<sub>3</sub> a<sub>2</sub> n<sub>1</sub> o<sub>2</sub>  <br>
+layer: [e<sub>0</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub>] h<sub>0</sub> x<sub>0</sub>  <br>
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| e | 7 |
+| t | 9 |
+| *a* | 22 |
+| *n* | 6, 21 |
+| o | 2, 12 |
+| s | 1, 6, 11 |
+| h | 3, 8, 13 |
+| q | 0, 5, 10, 15, 20, 25 |
+| *i*r | 5, 6, 8, 20, 21, 22, 23, 24 |
+| *x* | `layer1` |
