@@ -43,7 +43,7 @@ Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 </table>
 
 *Base layer effort (left) and Chord layer effort (right)*  <br>
-The average effort is 1.00 so a random keyboard layout is expected to have around 100 effort. (Which is the median of Generation 1)
+The Chord layer is 2.5 times the effort of Base layer. The average effort is 1.00 so a random keyboard layout is expected to have around 100 effort. (Which is the median of Generation 1)
 
 ### Pseudocode for keyboard layout performance criteria:
 
@@ -104,10 +104,13 @@ Results:
 | Rolls | 15.5269 | 21.0065 | 18.9485 |
 | Effort | 72.2655 | 64.2417 | 58.5 |
 
-Row / Col / Layer constriants:  <br>
-row: [e<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] a<sub>1</sub> i<sub>1</sub>  <br>
-col: [e<sub>2</sub> q<sub>0</sub> s<sub>1</sub> t<sub>4</sub>] h<sub>3</sub> a<sub>2</sub> n<sub>1</sub> o<sub>2</sub>  <br>
-layer: [e<sub>0</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub>] h<sub>0</sub> x<sub>0</sub>  <br>
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | [e<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] a<sub>1</sub> i<sub>1</sub> |
+| col | [e<sub>2</sub> q<sub>0</sub> s<sub>1</sub> t<sub>4</sub>] h<sub>3</sub> a<sub>2</sub> n<sub>1</sub> o<sub>2</sub> |
+| layer | [e<sub>0</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub>] h<sub>0</sub> x<sub>0</sub> |
 
 #### Key constraints for the next generation:
 
@@ -123,3 +126,39 @@ layer: [e<sub>0</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub>] h<sub>0</sub> x
 | q | 0, 5, 10, 15, 20, 25 |
 | *i*r | 5, 6, 8, 20, 21, 22, 23, 24 |
 | *x* | `layer1` |
+
+## Generation 3
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 16.1199 | 12.5505 | 14.0079 |
+| Lsb | 11.7902 | 7.358 | 18.9169 |
+| I/O diff. | 8.8888 | 11.4487 | -1.2270 |
+| Rolls | 21.7751 | 24.6741 | 18.9485 |
+| Effort | 67.0121 | 61.0877 | 58.5 |
+
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | [a<sub>1</sub> e<sub>1</sub> i<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] |
+| col | [a<sub>2</sub> e<sub>2</sub> h<sub>3</sub> n<sub>1</sub> o<sub>2</sub> q<sub>0</sub> s<sub>1</sub> t<sub>4</sub>] i<sub>3</sub> x<sub>0</sub> c<sub>4</sub> w<sub>4</sub> l<sub>1</sub> |
+| layer | [e<sub>0</sub> h<sub>0</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub> x<sub>0</sub>] j<sub>1</sub> k<sub>1</sub> z<sub>1</sub> |
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| e | 7 |
+| t | 9 |
+| a | 22 |
+| n | 6, 21 |
+| *i* | 8, 23 |
+| o | 2, 12 |
+| s | 1, 6, 11 |
+| h | 3, 8, 13 |
+| *x* | 15, 20, 25 |
+| q | 0, 5, 10, 15, 20, 25 |
+| r | 5, 6, 8, 20, 21, 22, 23, 24 |
