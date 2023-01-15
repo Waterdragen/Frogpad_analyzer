@@ -329,7 +329,7 @@ rneit  xlapw
 ysuhc  -z-kg
 ```
 
-|  |  | Frogpad Reference |
+|  | Optimizer | Frogpad Reference |
 | ----- | ----- | ----- |
 | Sfb | 11.8433 | 14.0079 |
 | Lsb | 7.2341 | 18.9169 |
@@ -337,7 +337,52 @@ ysuhc  -z-kg
 | Rolls | 27.5652 | 18.9485 |
 | Effort | 58.0894 | 58.5 |
 
+## Finger usage comparison
 
+Even though I didn't include finger usage when building this optimizer, it's still a good thing to also consider it at least. Frogpad is optimized for its effort, base layer usage, and Sfb so I made a comparison of the keyboards.
+
+| Frogpad keyboard | |
+| ----- | ----- |
+| Base layer usage | 84.5236% |
+| Effort | 58.5048 |
+| thumb | 15.4767% |
+| index | 41.0859% |
+| middle | 24.6605% |
+| ring | 25.1889% |
+| pinky | 9.0647% |
+| Home row usage | 39.1938% |
+| Inward roll | 8.8608 |
+| Outward roll | 10.0877 |
+| I/O difference | -1.2269 |
+| Top 50 inward roll list | ['the', 'tha', 'pro', 'thi', 'pre', 'tra', 'whi', 'tho', 'cha', 'whe', 'ple', 'pla', 'she', 'tri', 'sho', 'who', 'pri', 'gre', 'chi', 'gra', 'che', 'tre', 'cre', 'tro', 'tru', 'wha', 'mbe', 'shi', 'tle', 'gro', 'cle', 'cri', 'cho', 'sha', 'cla', 'pli', 'pti', 'dre', 'clu', 'dge', 'cro', 'clo', 'pte', 'pra', 'plo', 'wri', 'phi', 'gni', 'sla', 'dra'] |
+| Top 50 outward roll list | ['and', 'ing', 'ent', 'ons', 'ers', 'int', 'enc', 'ant', 'ity', 'art', 'und', 'ort', 'ind', 'uld', 'anc', 'end', 'ont', 'inc', 'ins', 'ard', 'any', 'orm', 'ord', 'omp', 'ans', 'ong', 'als', 'unt', 'ang', 'ary', 'ery', 'ond', 'ert', 'imp', 'ens', 'ely', 'ult', 'erv', 'old', 'erm', 'emp', 'onc', 'ors', 'ars', 'ory', 'arg', 'esp', 'irs', 'alt', 'eng'] |
+| Sfb | 14.007925590000008 |
+| Top 50 sfb list | ['of', 'st', 'ou', 'io', 'ea', 'll', 'fo', 'ct', 'ss', 'ie', 'ee', 'ts', 'ai', 'ia', 'fi', 'fe', 'bl', 'oo', 'if', 'ei', 'tt', 'fa', 'ef', 'rn', 'sc', 'qu', 'ue', 'ff', 'pp', 'ua', 'rr', 'au', 'br', 'ui', 'rk', 'mm', 'fu', 'ms', 'oi', 'rl', 'hr', 'cc', 'tw', 'af', 'nn', 'eo', 'xp', 'sm', 'iz', 'nl'] |
+| Lsb | 18.91688389 |
+| Top 50 lsb list | ['an', 'of', 'as', 'ou', 'ri', 'ur', 'fo', 'us', 'ut', 'rs', 'un', 'wi', 'na', 'ul', 'im', 'mi', 'ai', 'ir', 'ia', 'fi', 'tu', 'ry', 'fe', 'sa', 'ay', 'fr', 'ag', 'if', 'gr', 'sp', 'uc', 'bu', 'by', 'fa', 'ef', 'cu', 'rn', 'du', 'ga', 'qu', 'ue', 'ff', 'um', 'ua', 'up', 'lu', 'ru', 'ug', 'pi', 'au'] |
+
+| Optimizer keyboard | |
+| ----- | ----- |
+| Base layer usage | 78.6475% |
+|Effort | 58.0894 |
+| thumb | 21.3525% |
+| index | 30.1808% |
+| middle | 30.9031% |
+| ring | 19.1868% |
+| pinky | 19.7294% |
+| Home row usage | 52.4917% |
+| Inward roll | 20.8564 |
+| Outward roll | 6.7088 |
+| I/O difference | 14.1475 |
+| Top 50 inward roll list | ['the', 'ion', 'tio', 'for', 'her', 'ter', 'tha', 'con', 'ver', 'men', 'ted', 'was', 'per', 'tin', 'man', 'cal', 'tur', 'par', 'ies', 'wer', 'tho', 'han', 'ces', 'tor', 'ten', 'hen', 'min', 'can', 'cha', 'ial', 'whe', 'wor', 'had', 'tan', 'ven', 'hey', 'pos', 'mor', 'tes', 'por', 'hes', 'who', 'ber', 'mpl', 'has', 'ien', 'gen', 'fer', 'tal', 'mon']
+| Top 50 outward roll list | ['not', 'rat', 'rom', 'lat', 'lit', 'nat', 'rec', 'rit', 'ric', 'sit', 'low', 'rac', 'som', 'lic', 'duc', 'now', 'nit', 'rep', 'new', 'suc', 'rop', 'qui', 'rem', 'sec', 'dit', 'ret', 'ref', 'lac', 'lec', 'rig', 'rai', 'soc', 'rov', 'aft', 'log', 'let', 'reg', 'lig', 'ept', 'rev', 'sup', 'sub', 'dic', 'lem', 'roc', 'sig', 'jec', 'row', 'nic', 'dec'] |
+| Sfb | 11.8433 |
+| Top 50 sfb list | ['nd', 'ou', 'hi', 'ea', 'll', 'ns', 'ct', 'ly', 'ss', 'rs', 'ee', 'fi', 'ld', 'ry', 'oo', 'if', 'rd', 'tt', 'rn', 'ue', 'ff', 'ls', 'pp', 'ua', 'ds', 'pi', 'rr', 'au', 'bi', 'ib', 'ny', 'ki', 'ys', 'mm', 'ph', 'ip', 'rl', 'dr', 'cc', 'tw', 'nn', 'eo', 'nl', 'oa', 'sy', 'sl', 'dy', 'ik', 'dd', 'oe'] |
+| Lsb | 7.2341 |
+| Top 50 lsb list | ['ou', 'co', 'ho', 'ly', 'so', 'os', 'ry', 'ty', 'ay', 'bu', 'by', 'oc', 'yo', 'du', 'qu', 'ey', 'um', 'go', 'ds', 'mu', 'ny', 'ys', 'fu', 'og', 'ms', 'ye', 'ud', 'ub', 'sm', 'ok', 'my', 'ju', 'eq', 'dy', 'bs', 'oy', 'dg', 'yi', 'yp', 'ym', 'oh', 'uf', 'sf', 'yt', 'ya', 'yl', 'yc', 'yn', 'hm', 'py'] |
+
+
+Process finished with exit code 0
 
 
 
