@@ -34,9 +34,13 @@ Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 
 <h3>Keyboard effort model</h3>
 
-![Keyboard effort model base layer](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_a.png?raw=true)  <br>
+<table>
+  <tr>
+    <td valign="top"><img src="https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_a.png" width="400">
+    <td valign="top"><img src="https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_b.png" width="400">
+  </tr>
+</table>
 *Base layer effort*  <br>
-![Keyboard effort model chord layer](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_b.png?raw=true)  <br>
 *Chord layer effort*  <br>
 
 <h3>Pseudocode for keyboard layout performance criteria:</h3>
