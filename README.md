@@ -162,3 +162,109 @@ Row / Col / Layer constriants:
 | *x* | 15, 20, 25 |
 | q | 0, 5, 10, 15, 20, 25 |
 | r | 5, 6, 8, 20, 21, 22, 23, 24 |
+| *cw* | 4, 9, 14, 19, 24, 29 |
+| *l* | 1, 6, 11, 16, 21, 26 |
+| *jkz* | `layer1` |
+
+## Generation 4
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 14.0984 | 11.4681 | 14.0079 |
+| Lsb | 11.163 | 7.61232 | 18.9169 |
+| I/O diff. | 11.3891 | 13.0336 | -1.2270 |
+| Rolls | 24.1768 | 25.8826 | 18.9485 |
+| Effort | 61.247 | 57.5032 | 58.5 |
+
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | [a<sub>1</sub> e<sub>1</sub> i<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] x<sub>1</sub>  |
+| col | [a<sub>2</sub> c<sub>4</sub> e<sub>2</sub> h<sub>3</sub> i<sub>3</sub> l<sub>1</sub> n<sub>1</sub> o<sub>2</sub> q<sub>0</sub> s<sub>1</sub> t<sub>4</sub> w<sub>4</sub> x<sub>0</sub>] u<sub>2</sub> m<sub>4</sub> p<sub>3</sub> d<sub>1</sub> r<sub>0</sub> |
+| layer | [a<sub>1</sub> e<sub>0</sub> h<sub>0</sub> j<sub>1</sub> k<sub>1</sub> o<sub>0</sub> s<sub>0</sub> t<sub>0</sub> x<sub>0</sub> z<sub>1</sub>] i<sub>0</sub> q<sub>0</sub> r<sub>0</sub> u<sub>0</sub> d<sub>0</sub> n<sub>0</sub>|
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| *r* | 5 |
+| *n* | 6 |
+| e | 7 |
+| *i* | 8 |
+| t | 9 |
+| *x* | 20 |
+| a | 22 |
+| *d*s | 1, 11 |
+| *q* | 0, 10 |
+| o*u* | 2, 12 |
+| h | 3, 13 |
+| c*m*w | 4, 14, 19, 24, 29 |
+| *p* | 3, 8, 13, 18, 23, 28 |
+| l | 1, 6, 11, 16, 21, 26 |
+| jkz | `layer1` |
+
+## Generation 5
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 12.5758 | 11.3736 | 14.0079 |
+| Lsb | 10.4074 | 8.15633 | 18.9169 |
+| I/O diff. | 11.3891 | 14.1317 | -1.2270 |
+| Rolls | 26.453 | 27.3638 | 18.9485 |
+| Effort | 61.1999 | 57.4238 | 58.5 |
+
+At this point, no keyboard layouts got Best 10% for each category. So I have to adjust the threshold to Best 15%.  <br>
+
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | [a<sub>1</sub> e<sub>1</sub> i<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] l<sub>1</sub> o<sub>0</sub> u<sub>2</sub>|
+| col | [a<sub>2</sub> c<sub>4</sub> d<sub>1</sub> e<sub>2</sub> h<sub>3</sub> i<sub>3</sub> l<sub>1</sub> m<sub>4</sub> n<sub>1</sub> o<sub>2</sub> p<sub>3</sub> q<sub>0</sub> r<sub>0</sub> s<sub>1</sub> t<sub>4</sub> u<sub>2</sub> w<sub>4</sub> x<sub>0</sub>] b<sub>3</sub> g<sub>4</sub> y<sub>0</sub> |
+| layer | [a<sub>1</sub> d<sub>0</sub> e<sub>0</sub> h<sub>0</sub> i<sub>0</sub> j<sub>1</sub> k<sub>1</sub> n<sub>0</sub> o<sub>0</sub> q<sub>0</sub> r<sub>0</sub> s<sub>0</sub> t<sub>0</sub> u<sub>0</sub> x<sub>0</sub> z<sub>1</sub>] l<sub>1</sub> w<sub>1</sub> p<sub>1</sub> y<sub>0</sub> |
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| *o* | 2 |
+| r | 5 |
+| n | 6 |
+| e | 7 |
+| i | 8 |
+| t | 9 |
+| *u* | 12 |
+| *-* | 17 |
+| x | 20 |
+| *l* | 21 |
+| a | 22 |
+| *-* | 27 |
+| ds | 1, 11 |
+| *y*q | 0, 10 |
+| h | 3, 13 |
+| *w* | 19, 24, 29 |
+| cm*g* | 4, 14, 19, 24, 29 |
+| *p* | 18, 23, 28 |
+| *b* | 3, 13, 18, 23, 28 |
+| jkz | `layer1` |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
