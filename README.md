@@ -70,5 +70,5 @@ Results:
 
 Frogpad top 10 Inrolls: 'the', 'tha', 'pro', 'thi', 'pre', 'tra', 'whi', 'tho', 'cha', 'whe'
 Frogpad top 10 Outrolls: 'and', 'ing', 'ent', 'ons', 'ers', 'int', 'enc', 'ant', 'ity', 'art'
-This shows Frogpad is excellent at low Sfb and low effort, while maintaining high rolls. However it performs poorly in I/O diff. Even though Frogpad got the most frequent trigram to be an Inroll, and the h -> vowel Inroll motion, the vowel -> n Outroll motion makes its I/O diff. hit hard.
+This shows Frogpad is excellent at low Sfb and low effort, while maintaining high rolls. However it performs poorly in I/O diff. Even though Frogpad got the most frequent trigram to be an Inroll, and the h -> vowel Inroll motion, the vowel -> n Outroll motion hit its I/O diff. hard.
 Frogpad is not doing good in I/O diff.
