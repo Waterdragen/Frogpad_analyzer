@@ -1,7 +1,7 @@
 # Frogpad_optimizer
 Keyboard layout optimizer for Frogpad (one-handed) keyboard layout. <br>
 
-![alt text](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/frogpad_right_hand_keyboard.png?raw=true) <br>
+![Frogpad right hand keyboard](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/frogpad_right_hand_keyboard.png?raw=true) <br>
 *Standard Frogpad keybaord (right handed)* <br>
 
 <h3>Terms and definitions:</h3>
@@ -33,6 +33,9 @@ uinsy  --kgx
 Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 
 <h3>Keyboard effort model</h3>
+
+![Keyboard effort model base layer](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_a.png?raw=true)
+![Keyboard effort model chord layer](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/keyboard_effort_model_b.png?raw=true) <br>
 
 <h3>Pseudocode for keyboard layout performance criteria:</h3>
 
