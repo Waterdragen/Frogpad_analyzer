@@ -44,6 +44,7 @@ Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 
 *Base layer effort (left) and Chord layer effort (right)*  <br>
 
+
 <h3>Pseudocode for keyboard layout performance criteria:</h3>
 
 Sfb: `col0 == col1 or (col0, col1) in ((0, 1), (1, 0))`  <br>
@@ -55,4 +56,19 @@ Rolls: `inroll + outroll`  <br>
 
 <h3>Generation 1</h3>
 
-First, I ran 1 million random keyboard combinations 
+First, I ran 1 million random keyboard combinations and then I generated the hash tables of the generation. The hash tables are divided into row, col, and key so we can analyze the key position by row, col, or key.
+
+Results:
+
+|  | Best Q | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 23.7686 | 16.8344 | 14.0079 |
+| Lsb | 29.6013 | 15.6122 | 18.9169 |
+| I/O diff. | 1.43112 | 5.60616 | -1.2270 |
+| Rolls | 13.0083 | 18.4849 | 18.9485 |
+| Effort | 92.3998 | 77.8503 | 58.5 |
+
+Frogpad top 10 Inrolls: 'the', 'tha', 'pro', 'thi', 'pre', 'tra', 'whi', 'tho', 'cha', 'whe'
+Frogpad top 10 Outrolls: 'and', 'ing', 'ent', 'ons', 'ers', 'int', 'enc', 'ant', 'ity', 'art'
+This shows Frogpad is excellent at low Sfb and low effort, while maintaining high rolls. However it performs poorly in I/O diff. Even though Frogpad got the most frequent trigram to be an Inroll, and the h -> vowel Inroll motion, the vowel -> n Outroll motion makes its I/O diff. hit hard.
+Frogpad is not doing good in I/O diff.
