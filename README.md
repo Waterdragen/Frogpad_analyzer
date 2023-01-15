@@ -4,7 +4,7 @@ Keyboard layout optimizer for Frogpad (one-handed) keyboard layout. <br>
 ![alt text](https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/frogpad_right_hand_keyboard.png?raw=true) <br>
 *Standard Frogpad keybaord (right handed)* <br>
 
-Terms and definitions:  <br>
+<h3>Terms and definitions:</h3>
 **Bigram**: 2-letter combination  <br>
 **Trigram**: 3-letter combination  <br>
 Base layer: the 15 keys at the middle that can be pressed directly.
@@ -27,4 +27,4 @@ oehtd  qzlcv
 uinsy  --kgx
 ```
 
-Implementation:
+<h3>Implementation:</h3>
