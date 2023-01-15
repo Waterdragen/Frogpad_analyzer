@@ -57,7 +57,7 @@ Effort: `Monogram.frequency * keyboard_effort`
 
 ## Generation 1
 
-I ran 1 million random keyboard combinations and gets the Best 10% then I generated the hash tables of the generation. The hash tables are divided into row, col, layer, and key. The row_diff, col_diff, and layer_diff hash tables is based on the most frequent location minus the 2nd most frequent location. The higher the difference, the more confidence we have for a key to be in a certain position.The most frequent and highest diff keys are constrained for the next generation.
+I ran 1 million random keyboard combinations and get the Best 10% then I generated the hash tables of the generation. The hash tables are divided into row, col, layer, and key. The row_diff, col_diff, and layer_diff hash tables is based on the most frequent location minus the 2nd most frequent location. The higher the difference, the more confidence we have for a key to be in a certain position.The most frequent and highest diff keys are constrained for the next generation.
 
 Results:
 
@@ -218,7 +218,7 @@ Results:
 | Rolls | 26.453 | 27.3638 | 18.9485 |
 | Effort | 61.1999 | 57.4238 | 58.5 |
 
-At this point, no keyboard layouts got Best 10% for each category. So I have to adjust the threshold to Best 15%.  <br>
+At this point, no keyboard layouts got Best 10% in all categories. So I have to adjust the threshold to Best 15%.  <br>
 
 Row / Col / Layer constriants:
 
@@ -253,6 +253,89 @@ Row / Col / Layer constriants:
 | *b* | 3, 13, 18, 23, 28 |
 | jkz | `layer1` |
 
+
+## Generation 6
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 12.0108 | 11.6303 | 14.0079 |
+| Lsb | 10.1053 | 7.7816 | 18.9169 |
+| I/O diff. | 13.9112 | 14.3036 | -1.2270 |
+| Rolls | 26.8418 | 27.5652 | 18.9485 |
+| Effort | 60.1379 | 57.3251 | 58.5 |
+
+Since there aren't many keys left, I can just iterate through the permutations of most of the constrained keys to get Gen 6. Threshold is adjusted to Best Quartile.  <br>
+
+Row / Col / Layer constriants:
+
+| Constraint | Key location |
+| ---------- | ------------ |
+| row | [a<sub>1</sub> e<sub>1</sub> i<sub>1</sub> n<sub>1</sub> r<sub>1</sub> t<sub>1</sub>] l<sub>1</sub> o<sub>0</sub> u<sub>2</sub>|
+| col | [a<sub>2</sub> c<sub>4</sub> d<sub>1</sub> e<sub>2</sub> h<sub>3</sub> i<sub>3</sub> l<sub>1</sub> m<sub>4</sub> n<sub>1</sub> o<sub>2</sub> p<sub>3</sub> q<sub>0</sub> r<sub>0</sub> s<sub>1</sub> t<sub>4</sub> u<sub>2</sub> w<sub>4</sub> x<sub>0</sub>] b<sub>3</sub> g<sub>4</sub> y<sub>0</sub> |
+| layer | [a<sub>1</sub> d<sub>0</sub> e<sub>0</sub> h<sub>0</sub> i<sub>0</sub> j<sub>1</sub> k<sub>1</sub> n<sub>0</sub> o<sub>0</sub> q<sub>0</sub> r<sub>0</sub> s<sub>0</sub> t<sub>0</sub> u<sub>0</sub> x<sub>0</sub> z<sub>1</sub>] l<sub>1</sub> w<sub>1</sub> p<sub>1</sub> y<sub>0</sub> |
+
+#### Key constraints for the next generation:
+
+| Letter | Key location |
+| ------ | ------------ |
+| *q* | 0 |
+| o | 2 |
+| r | 5 |
+| n | 6 |
+| e | 7 |
+| i | 8 |
+| t | 9 |
+| *y* | 10 |
+| u | 12 |
+| - | 17 |
+| *b* | 18 |
+| x | 20 |
+| l | 21 |
+| a | 22 |
+| *p* | 23 |
+| - | 27 |
+| *k* | 28 |
+| *g* | 29 |
+| ds | 1, 11 |
+| h | 3, 13 |
+| w | 19, 24 |
+| *f* | 3, 4, 13, 14 |
+| cm | 4, 14, 19, 24 |
+| p | 18, 23, 28 |
+| b | 3, 13, 18, 23, 28 |
+| *jkz-* | remaining |
+
+## Generation 7
+
+Results:
+
+|  | Best Quartile | Best 1% | Frogpad Reference |
+| ----- | ----- | ----- | ----- |
+| Sfb | 11.6963 | 11.6303 | 14.0079 |
+| Lsb | 8.14034 | 7.20288 | 18.9169 |
+| I/O diff. | 14.1475 | 14.211 | -1.2270 |
+| Rolls | 27.3544 | 27.5652 | 18.9485 |
+| Effort | 59.2982 | 56.8557 | 58.5 |
+
+This time I've iterated through the permutations of all the constrained keys. Threshold is adjusted to Median. Now I'm left with 1094 keyboard layouts (with duplicates) <br>
+So I ran the Python script, which sorts the sfb, lsb, iodiff (reversed), rolls (reversed), and effort, adds up the rank index and returns the sorted dict of sum of rank numbers. Lowest rank number sum is the best keyboard layout.
+
+## Results
+```
+qdohm  -j-bv
+rneit  xlapw
+ysuhc  -z-kg
+```
+
+|  |  | Frogpad Reference |
+| ----- | ----- | ----- |
+| Sfb | 11.8433 | 14.0079 |
+| Lsb | 7.2341 | 18.9169 |
+| I/O diff. | 14.1475 | -1.2270 |
+| Rolls | 27.5652 | 18.9485 |
+| Effort | 58.0894 | 58.5 |
 
 
 
