@@ -43,7 +43,7 @@ Notes: Home row is placed at `row1`; index finger presses `col0` and `col1`
 </table>
 
 *Base layer effort (left) and Chord layer effort (right)*  <br>
-The Chord layer is 2.5 times the effort of Base layer. The average effort is 1.00 so a random keyboard layout is expected to have around 100 effort. (Which is the median of Generation 1)
+The Chord layer effort is 2.5 times the effort of Base layer. The average effort is 1.00 so a random keyboard layout is expected to have around 100 effort. (Which is the median of Generation 1)
 
 ### Pseudocode for keyboard layout performance criteria:
 
