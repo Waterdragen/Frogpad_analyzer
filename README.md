@@ -1,5 +1,5 @@
 # Frogpad_optimizer
-Keyboard layout optimizer for Frogpad (one-handed) keyboard layout. <br>
+Keyboard layout analyzer for Frogpad (one-handed) keyboard layout. <br>
 
 <img src="https://github.com/Waterdragen/Frogpad_optimizer/blob/main/images/frogpad_right_hand_keyboard.png" width="600">
 
