@@ -186,7 +186,7 @@ public:
 
 			// Sfb: If same col or cols combination is 3,4, exclude same key
 			if (col0 == col1 && bigram.key()[0] != bigram.key()[1]
-					|| col0 == 3 && col1 == 4 || col0 == 4 && col1 == 3) {
+					|| col0 == 0 && col1 == 1 || col0 == 1 && col1 == 0) {
 				this->sfb += (double)bigram.value();
 				// Sfb Dist: use distance formula sqrt(dX^2 + dY^2) * frequency
 				this->sfb_dist += (double)sqrt(pow(row0 - row1, 2) + pow(col0 - col1, 2)) * (double)bigram.value();
@@ -230,6 +230,9 @@ public:
 
 			if (layer0 != 1 && layer1 != 1 && layer2 != 1) {
 				this->onelayer += (double)trigram.value();
+				if (!col0) { col0 = 1; }
+				if (!col1) { col1 = 1; }
+				if (!col2) { col2 = 1; }
 				if (col0 > col1 && col1 > col2 || col0 < col1 && col1 < col2)
 					this->onedir += (double)trigram.value();
 			}

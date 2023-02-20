@@ -1,5 +1,4 @@
 import json
-import numpy as np
 import os
 import re
 from collections import OrderedDict
@@ -25,13 +24,13 @@ def filter_ngram():
 
 
 def make_hash_table(filename: str, chunk_width: int, mode: str, include_blanks: bool = False):
-    if mode not in ("row", "finger"):
-        raise ValueError("mode must be in: row, finger")
+    if mode not in ("row", "finger", "col", "layer"):
+        raise ValueError("mode must be in: row, finger, col, layer")
 
     line_num: int
     line_text: str
     hash_table: Dict[str, dict] = {}
-    sub_hash_table_num = {"row": range(3), "finger": range(1, 5)}
+    sub_hash_table_num = {"row": range(3), "finger": range(1, 5), "col": range(5), "layer": range(2)}
     for i in sub_hash_table_num[mode]:
         hash_table[f"{mode}{i}"] = {}
 
@@ -41,13 +40,19 @@ def make_hash_table(filename: str, chunk_width: int, mode: str, include_blanks: 
             for v, c in enumerate(keys_text):
                 if not include_blanks and c == "-":
                     continue
-                if mode == "row":
-                    key_name = f"{mode}{v % 15 // 5}"
-                else:
-                    finger = v % 15 % 5
-                    if not finger:
-                        finger = 1
-                    key_name = f"{mode}{finger}"
+                key_name = ""
+                match mode:
+                    case "row":
+                        key_name = f"{mode}{v % 15 // 5}"
+                    case "finger":
+                        finger = v % 15 % 5
+                        if not finger:
+                            finger = 1
+                        key_name = f"{mode}{finger}"
+                    case "col":
+                        key_name = f"{mode}{v % 15 % 5}"
+                    case "layer":
+                        key_name = f"{mode}{v // 15}"
                 if c not in hash_table[key_name]:
                     hash_table[key_name][c] = 1
                 else:
@@ -203,9 +208,15 @@ def row_col_intersection(row: dict[str, int], col: dict[str, int | tuple[int, ..
 if __name__ == '__main__':
     ...
 
-    make_hash_tables(4)
-    GenRow = dict(Item for Item in zip("et", (1, 1)))
-    GenCol = dict(Item for Item in zip("aenorith", (1, 1, 2, (0, 1), 2, (0, 1), 3, 2)))
-    GenLayer = dict(Item for Item in zip("etaoinsrhld", (0, 0, 0, 0, 0, 0,
-                                                         0, 0, 0, 0, 0)))
+    # make_hash_tables(2)
+    # make_hash_table("gen2.txt", 10, "col")
+    # make_hash_table("gen2.txt", 10, "layer")
+    GenRow = dict(Item for Item in zip("aehiklnorstu", (2, 1, 2, 1, 2, 1, 0, 0, 1, 1, 1, 0)))
+    GenCol = dict(Item for Item in zip("adefhilnorstu',.;vgckp", (1, 3, 1, 4, 2, 0, 2,
+                                                                  2, 1, 2, 4, 3, 0, (0, 1),
+                                                                  1, 1, (0, 1),
+                                                                  2, 3, 4, (0, 1), 3)))
+    GenLayer = dict(Item for Item in zip("adefhilnorstu,.;'", (0, 0, 0, 0, 0, 0, 1,
+                                                               0, 0, 0, 0, 0, 0,
+                                                               1, 1, 1, 1)))
     row_col_intersection(GenRow, GenCol, GenLayer)

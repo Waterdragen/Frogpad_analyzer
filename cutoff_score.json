@@ -1,0 +1,10 @@
+{
+	"effort": 0.02,
+	"sfb": 0.05,
+	"sfb_dist": 0.6,
+	"lsb": 0.6,
+	"total_alt": 0.2,
+	"strong_ratio": 0.5,
+	"onelayer": 0.1,
+	"onedir": 0.2
+}
